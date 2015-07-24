@@ -5,9 +5,11 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP DATABASE IF EXISTS `xaver`;
 CREATE DATABASE `xaver` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `xaver`;
 
+DROP TABLE IF EXISTS `adverts`;
 CREATE TABLE `adverts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `private` tinyint(2) NOT NULL,
@@ -27,8 +29,25 @@ CREATE TABLE `adverts` (
 INSERT INTO `adverts` (`id`, `private`, `seller_name`, `email`, `allow_mails`, `phone`, `city`, `metro`, `category_id`, `title`, `description`, `price`) VALUES
 (220,	0,	'asdf',	'asdf@asdf.asdf',	0,	'123',	'',	'0',	'',	'321',	'321',	321),
 (222,	0,	'52354',	'',	0,	'52354',	'',	'0',	'',	'444',	'444',	444),
-(281,	1,	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3);
+(281,	1,	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3),
+(282,	0,	'',	'',	0,	'',	'',	'',	'',	'',	'',	0);
 
+INSERT INTO `adv_test` (`id`, `title`, `price`, `seller_name`) VALUES
+(1,	'Try',	11,	'Myname'),
+(2,	'asdf',	0,	''),
+(3,	'vah',	0,	''),
+(4,	'vah',	0,	''),
+(5,	'fasdf',	0,	''),
+(6,	'{$title}',	0,	''),
+(7,	'{$title}',	0,	''),
+(8,	'{$title}',	0,	'{$seller_name}'),
+(9,	'',	0,	'$seller_name'),
+(10,	'',	0,	'$seller_name'),
+(11,	'radhe',	108,	'my name'),
+(12,	'Name of adverts',	0,	''),
+(13,	'title2',	109,	'');
+
+DROP TABLE IF EXISTS `select_meta`;
 CREATE TABLE `select_meta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
@@ -37,5 +56,9 @@ CREATE TABLE `select_meta` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `select_meta` (`id`, `name`, `label`, `options`) VALUES
+(1,	'city',	'Город',	'{\"\":\"Выберите город\",\"64\":\"Маяпур\", \"16108\":\"Пури\", \"108\":\"Вриндаван\"}'),
+(2,	'metro',	'Метро',	'[\"Выберите станцию\",\"Deli-Aeropor\", \"Jabo\", \"Haribo\"]'),
+(3,	'Categorys',	'Категории',	'{\"\":\"Выберите категорию\",\"Спорт\":{\"6\":\"Гольф\",\"9\":\"Крикет\",\"7\":\"Плавание\"},\"Отдых\":{\"3\":\"Сауна\",\"1\":\"Массаж\"}}');
 
--- 2015-07-14 12:45:40
+-- 2015-07-24 14:46:04
