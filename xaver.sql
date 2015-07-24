@@ -32,21 +32,6 @@ INSERT INTO `adverts` (`id`, `private`, `seller_name`, `email`, `allow_mails`, `
 (281,	1,	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3),
 (282,	0,	'',	'',	0,	'',	'',	'',	'',	'',	'',	0);
 
-INSERT INTO `adv_test` (`id`, `title`, `price`, `seller_name`) VALUES
-(1,	'Try',	11,	'Myname'),
-(2,	'asdf',	0,	''),
-(3,	'vah',	0,	''),
-(4,	'vah',	0,	''),
-(5,	'fasdf',	0,	''),
-(6,	'{$title}',	0,	''),
-(7,	'{$title}',	0,	''),
-(8,	'{$title}',	0,	'{$seller_name}'),
-(9,	'',	0,	'$seller_name'),
-(10,	'',	0,	'$seller_name'),
-(11,	'radhe',	108,	'my name'),
-(12,	'Name of adverts',	0,	''),
-(13,	'title2',	109,	'');
-
 DROP TABLE IF EXISTS `select_meta`;
 CREATE TABLE `select_meta` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -61,4 +46,4 @@ INSERT INTO `select_meta` (`id`, `name`, `label`, `options`) VALUES
 (2,	'metro',	'Метро',	'[\"Выберите станцию\",\"Deli-Aeropor\", \"Jabo\", \"Haribo\"]'),
 (3,	'Categorys',	'Категории',	'{\"\":\"Выберите категорию\",\"Спорт\":{\"6\":\"Гольф\",\"9\":\"Крикет\",\"7\":\"Плавание\"},\"Отдых\":{\"3\":\"Сауна\",\"1\":\"Массаж\"}}');
 
--- 2015-07-24 14:46:04
+-- 2015-07-24 14:49:04
