@@ -49,7 +49,7 @@ input[type='text'], select, textarea{
         <label for="fld_phone" class="form-label">Номер телефона</label>
         <input type="text"  value="{$phone}" name="phone" id="fld_phone">
     </div>
-    <!-- <div id="f_location_id" class="form-row "> 
+    <div id="f_location_id" class="form-row "> 
     <label for="region" class="form-label">Город</label> 
         {html_options name=city options=$citys selected=$city }
     </div>
@@ -60,7 +60,7 @@ input[type='text'], select, textarea{
     <div class="form-row "> 
         <label for="category_id" >Категория</label>
         {html_options name=category_id options=$categorys selected=$category_id }
-    </div>  -->
+    </div> 
     <div class="form-row"> 
         <label for="fld_seller_name"><b> Ваше имя</b></label>
         <input type="text" maxlength="40" value="{$seller_name}" name="seller_name" id="fld_seller_name">
