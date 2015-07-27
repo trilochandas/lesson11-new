@@ -28,6 +28,7 @@ input[type='text'], select, textarea{
 {/literal}
 <!-- action="formFunctions.php?action=addAdverts" -->
 <a href="{$smarty.server.SCRIPT_NAME}">self</a>
+
 <div class="cont"></div>
 <p style="color:red;">{$error}</p>
 <form  method="POST" >
