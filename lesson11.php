@@ -28,7 +28,7 @@ $smarty->config_dir = $smarty_dir . 'configs';
 $smarty->assign('error', '');
 
 // including all classes 
-include_once($project_dir . '/adverts.class.php');
+include_once($project_dir . '/classes.php');
 
 // adding all selects to form
 Advert::getSelects();
