@@ -33,7 +33,7 @@ class MysqlWorker
 
     private function __construct()
     {
-        $this->connection = DbSimple_Generic::connect( 'mysql://root:123@localhost/xaver' );
+        $this->connection = DbSimple_Generic::connect( 'mysql://user:123@localhost/test' );
         $this->connection->setErrorHandler('mysqlErrorHandler');
         function mysqlErrorHandler($message, $info) {
             // Если использовалась @, ничего не делать.

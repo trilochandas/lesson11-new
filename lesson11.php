@@ -38,12 +38,10 @@ if (isset($_POST['main_form_submit'])) {
     // update advert
     if (isset($_GET['id'])) {
         $id = (int) $_GET['id'];
-        array_pop($_POST);
         $adv = new Advert($_POST);
         $adv->reSave($id);
     // add advert
     } else {
-        array_pop($_POST);
         $adv = new Advert($_POST);
         $adv->save();
     }
