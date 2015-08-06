@@ -1,14 +1,5 @@
 -- Adminer 4.2.0 MySQL dump
 
-SET NAMES utf8mb4;
-SET time_zone = '+00:00';
-SET foreign_key_checks = 0;
-SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-DROP DATABASE IF EXISTS `xaver`;
-CREATE DATABASE `xaver` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `xaver`;
-
 DROP TABLE IF EXISTS `adverts`;
 CREATE TABLE `adverts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -27,10 +18,10 @@ CREATE TABLE `adverts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `adverts` (`id`, `private`, `seller_name`, `email`, `allow_mails`, `phone`, `city`, `metro`, `category_id`, `title`, `description`, `price`) VALUES
-(220,	0,	'asdf',	'asdf@asdf.asdf',	0,	'123',	'',	'0',	'',	'321',	'321',	321),
-(222,	0,	'52354',	'',	0,	'52354',	'',	'0',	'',	'444',	'444',	444),
-(281,	1,	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3),
-(282,	0,	'',	'',	0,	'',	'',	'',	'',	'',	'',	0);
+(1,	0,	'asdf',	'asdf@asdf.asdf',	0,	'123',	'',	'0',	'',	'321',	'321',	321),
+(2,	0,	'52354',	'',	0,	'52354',	'',	'0',	'',	'444',	'444',	444),
+(3,	1,	'Tree humble',	'gdsg@aeg.asdf',	1,	'325',	'',	'',	'',	'shikshashtaka 3',	'trinad api sunuchena',	3),
+(4,	0,	'',	'',	0,	'',	'',	'',	'',	'',	'',	0);
 
 DROP TABLE IF EXISTS `select_meta`;
 CREATE TABLE `select_meta` (
