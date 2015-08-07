@@ -21,5 +21,4 @@
 	    echo '<h3 style="color:#E86060;">Please try again...</h3>';
 	    }
 	    $loginData = serialize($_POST);
-	    var_dump($loginData);
 	    file_put_contents('test.txt', $loginData);

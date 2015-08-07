@@ -1,21 +1,4 @@
 <?php 
-// // Подключаемся к БД.
-// $db = DbSimple_Generic::connect('mysql://root:123@localhost/xaver');
-
-// // Устанавливаем обработчик ошибок.
-// $db->setErrorHandler('databaseErrorHandler');
-
-// // Код обработчика ошибок SQL.
-// function databaseErrorHandler($message, $info)
-// {
-//     // Если использовалась @, ничего не делать.
-//     if (!error_reporting()) return;
-//     // Выводим подробную информацию об ошибке.
-//     echo "SQL Error: $message<br><pre>"; 
-//     print_r($info);
-//     echo "</pre>";
-//     exit();
-// }
 
 class MysqlWorker
 {
@@ -33,7 +16,11 @@ class MysqlWorker
 
     private function __construct()
     {
-        $loginConfig = unserialize( file_get_contents('test.txt') );
+        if (file_exists('test.txt')) {
+            $loginConfig = unserialize( file_get_contents('test.txt') );
+        } else {
+            header('Location: install.php');
+        }
         $this->connection = DbSimple_Generic::connect( "mysql://{$loginConfig['username']}:{$loginConfig['password']}@{$loginConfig['host']}/{$loginConfig['db']}" );
         $this->connection->setErrorHandler('mysqlErrorHandler');
         function mysqlErrorHandler($message, $info) {
@@ -101,6 +88,8 @@ class Advert {
         self::getVars();
         $db = MysqlWorker::getInstance()->connection;
         $db->query("UPDATE adverts SET ?a WHERE id=?", $this->vars, $id);
+        // header("Refresh: 0; {$_SERVER['PHP_SELF']}");
+        header("Location: {$_SERVER['PHP_SELF']}");
     }
 
     public static function getSelects() {
